@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibh-Anu CRM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <h1>Vibh-Anu <span>CRM</span></h1>
+    <p>Customer Relationship Management</p>
+</header>
+
+<main class="container">
+
+    <!-- LOGIN PAGE -->
+    <section id="loginPage" class="panel">
+        <h2>Welcome Back</h2>
+        <p>Sign in to your department workspace.</p>
+
+        <form id="loginForm">
+            <label for="username">Department Username</label>
+            <select id="username" required>
+                <option value="marketing">Marketing</option>
+                <option value="communication">Communication</option>
+                <option value="vigilance">Vigilance</option>
+                <option value="support">Support</option>
+                <option value="sales">Sales</option>
+            </select>
+
+            <label for="password">Password</label>
+            <input
+                id="password"
+                type="password"
+                placeholder="Enter password"
+                required
+            >
+
+            <button type="submit">Sign In</button>
+            <p id="loginMessage" class="message" role="status"></p>
+        </form>
+    </section>
+
+    <!-- DASHBOARD PAGE -->
+    <section
+        id="dashboardPage"
+        class="panel"
+        style="display: none;"
+    >
+        <div class="dashboardHeading">
+            <div>
+                <p class="eyebrow">DEPARTMENT WORKSPACE</p>
+                <h2 id="departmentTitle">Dashboard</h2>
+            </div>
+
+            <button
+                id="logoutButton"
+                class="secondary"
+                type="button"
+            >
+                Log Out
+            </button>
+        </div>
+
+        <p id="welcomeUser">Welcome</p>
+
+        <div class="stats">
+            <div class="stat">
+                <span>Total Leads</span>
+                <strong id="leadCount">0</strong>
+            </div>
+            <div class="stat">
+                <span>Department</span>
+                <strong id="roleLabel">—</strong>
+            </div>
+        </div>
+
+        <p id="dashboardMessage" class="message" role="status"></p>
+
+        <!-- MARKETING -->
+        <section
+            id="marketingSection"
+            class="department-section"
+            style="display: none;"
+        >
+            <h3>Marketing Department</h3>
+            <h4>Create New Lead</h4>
+
+            <form id="marketingForm">
+                <label for="customerName">Customer Name</label>
+                <input
+                    id="customerName"
+                    type="text"
+                    placeholder="Enter customer name"
+                    required
+                >
+
+                <label for="contact">Contact Number</label>
+                <input
+                    id="contact"
+                    type="tel"
+                    placeholder="Enter contact number"
+                    required
+                >
+
+                <button type="submit">Create Lead</button>
+            </form>
+        </section>
+
+        <!-- COMMUNICATION -->
+        <section
+            id="communicationSection"
+            class="department-section"
+            style="display: none;"
+        >
+            <h3>Communication Department</h3>
+            <h4>Update Customer Details</h4>
+
+            <form id="communicationForm">
+                <label for="communicationLead">Select Lead</label>
+                <select id="communicationLead" required>
+                    <option value="">Select a lead</option>
+                </select>
+
+                <label for="communicationName">Customer Name</label>
+                <input id="communicationName" type="text" required>
+
+                <label for="address">Customer Address</label>
+                <input id="address" type="text" required>
+
+                <label for="appointmentDate">Appointment Date</label>
+                <input id="appointmentDate" type="date" required>
+
+                <label for="appointmentTime">Appointment Time</label>
+                <input id="appointmentTime" type="time" required>
+
+                <label for="remarks">Remarks</label>
+                <textarea
+                    id="remarks"
+                    rows="3"
+                    placeholder="Enter remarks"
+                ></textarea>
+
+                <button type="submit">Save Customer Details</button>
+            </form>
+        </section>
+
+        <!-- VIGILANCE -->
+        <section
+            id="vigilanceSection"
+            class="department-section"
+            style="display: none;"
+        >
+            <h3>Vigilance Department</h3>
+            <h4>Customer Verification</h4>
+
+            <form id="vigilanceForm">
+                <label for="vigilanceLead">Select Customer Lead</label>
+                <select id="vigilanceLead" required>
+                    <option value="">Select a lead</option>
+                </select>
+
+                <label for="vigilanceName">Customer Name</label>
+                <input id="vigilanceName" type="text" required>
+
+                <label for="vigilanceAddress">Customer Address</label>
+                <input id="vigilanceAddress" type="text" required>
+
+                <label for="vigilanceDate">Appointment Date</label>
+                <input id="vigilanceDate" type="date" required>
+
+                <label for="vigilanceTime">Appointment Time</label>
+                <input id="vigilanceTime" type="time" required>
+
+                <label for="vigilanceRemarks">Remarks</label>
+                <textarea
+                    id="vigilanceRemarks"
+                    rows="3"
+                    placeholder="Enter verification remarks"
+                ></textarea>
+
+                <label for="audioFile">Upload Confirmation Audio</label>
+                <input
+                    id="audioFile"
+                    type="file"
+                    accept="audio/*,.aac,.m4a,.mp3,.wav,.ogg,.mpeg"
+                    required
+                >
+
+                <button type="submit">Save Verification</button>
+            </form>
+        </section>
+
+        <!-- SUPPORT -->
+        <section
+            id="supportSection"
+            class="department-section"
+            style="display: none;"
+        >
+            <h3>Support Department</h3>
+            <p>
+                Select a lead, listen to its recording, then verify
+                or reject it.
+            </p>
+
+            <form id="supportForm">
+                <label for="supportLead">Select Customer Lead</label>
+                <select id="supportLead" required>
+                    <option value="">Select a lead with audio</option>
+                </select>
+
+                <div id="supportAudio"></div>
+
+                <div class="supportActions">
+                    <button
+                        id="verifyLeadButton"
+                        type="button"
+                        disabled
+                    >
+                        Verify Lead
+                    </button>
+
+                    <button
+                        id="rejectLeadButton"
+                        class="secondary"
+                        type="button"
+                        disabled
+                    >
+                        Reject Lead
+                    </button>
+                </div>
+
+                <p id="supportMessage" class="message" role="status"></p>
+            </form>
+        </section>
+
+        <!-- SALES -->
+        <section
+            id="salesSection"
+            class="department-section"
+            style="display: none;"
+        >
+            <h3>Sales Department</h3>
+            <p>Review approved leads and check claim eligibility.</p>
+            <div id="salesLeads"></div>
+        </section>
+
+        <!-- ALL LEADS -->
+        <div class="sectionHeading">
+            <h3>Customer Leads</h3>
+
+            <button
+                id="refreshLeadsButton"
+                class="secondary"
+                type="button"
+            >
+                Refresh Leads
+            </button>
+        </div>
+
+        <div id="leadsList" class="leadList"></div>
+    </section>
+</main>
+
+<footer>Vibh-Anu CRM · Internal Demo</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

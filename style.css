@@ -1,0 +1,197 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f3f5fa;
+    color: #20283a;
+}
+
+.topbar {
+    padding: 24px 7%;
+    background: #172554;
+    color: white;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 27px;
+}
+
+.topbar h1 span {
+    color: #93c5fd;
+}
+
+.topbar p {
+    margin: 6px 0 0;
+    color: #dbeafe;
+    font-size: 14px;
+}
+
+.container {
+    width: min(1000px, 92%);
+    margin: 40px auto;
+}
+
+.panel {
+    padding: 28px;
+    background: white;
+    border: 1px solid #e1e6ef;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(23, 37, 84, 0.06);
+}
+
+#loginSection {
+    max-width: 460px;
+    margin: 45px auto;
+}
+
+h2, h3 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin: 17px 0 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd4e2;
+    border-radius: 8px;
+    background: white;
+    font-size: 15px;
+}
+
+button {
+    padding: 11px 17px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button {
+    width: 100%;
+    margin-top: 22px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.secondary {
+    background: #eaf0ff;
+    color: #1d4ed8;
+}
+
+.dashboardHeading, .sectionHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.eyebrow {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.stats {
+    display: flex;
+    gap: 16px;
+    margin: 25px 0;
+}
+
+.stat {
+    flex: 1;
+    padding: 18px;
+    background: #f4f7ff;
+    border-radius: 10px;
+}
+
+.stat span, .stat strong {
+    display: block;
+}
+
+.stat span {
+    margin-bottom: 8px;
+    color: #65718a;
+    font-size: 13px;
+}
+
+.stat strong {
+    overflow-wrap: anywhere;
+}
+
+.sectionHeading {
+    margin-top: 30px;
+}
+
+.leadList {
+    display: grid;
+    gap: 12px;
+}
+
+.leadCard {
+    padding: 17px;
+    border: 1px solid #e1e6ef;
+    border-radius: 10px;
+}
+
+.leadCard h4 {
+    margin: 0 0 8px;
+}
+
+.leadCard p {
+    margin: 5px 0;
+    color: #566176;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.message {
+    font-size: 14px;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #65718a;
+    font-size: 13px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .panel {
+        padding: 20px;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .dashboardHeading, .sectionHeading {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}
